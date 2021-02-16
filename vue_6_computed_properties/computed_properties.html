@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computed Properties</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <h1>{{ title }}</h1>
+
+    <p> Method - 1: {{ getRandomNumber() }}</p>
+    <p> Method - 2: {{ getRandomNumber() }}</p>
+    <p> Method - 3: {{ getRandomNumber() }}</p>
+    <hr>
+    <h2>Computed property should be seen as an extension of the data object / model</h2>
+    <p> Computed - 1: {{ getRandomComputed }}</p>
+    <p> Computed - 2: {{ getRandomComputed }}</p>
+    <p> Computed - 3: {{ getRandomComputed }}</p>
+    <br><br>
+    <h3>Full Name: {{ fullName }}</h3>
+    <h3>Reversed Full Name: {{ reversedFullName }}</h3>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

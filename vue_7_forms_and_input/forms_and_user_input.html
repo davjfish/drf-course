@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms and User Input</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div class="row justify-content-center mt-3">
+        <h1>Class and Style Binding</h1>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="circle"
+             v-bind:style="{backgroundColor: color}">
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <input type="text" v-model="color">
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <p> Color Data: {{ color }}</p>
+    </div>
+
+
+    <div class="row justify-content-center mt-3">
+        <div class="col-5">
+            <p>Write a Message</p>
+            <textarea class="form-control"
+                      cols="60"
+                      rows="5"
+                      placeholder="write something"
+                      v-model="text"
+            ></textarea>
+        </div>
+        <div class="col-5">
+            <p>Message:</p>
+            <p>{{ text }}</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">&nbsp;&nbsp;Value: {{ checked }}</label>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <select v-model="city">
+            <option>Rome</option>
+            <option>New York</option>
+            <option>Montreal</option>
+            <option>Mumbai</option>
+            <option>Shenzen</option>
+        </select>
+        <span>&nbsp;&nbsp;City: {{ city }}</span>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div v-if="errors" class="row justify-content-center mt-3">
+        <p style="color: red">{{ errors }}</p>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <form @submit.prevent="onSubmit">
+            <div class="form-group">
+                <label for="commentText">&nbsp;&nbsp;Enter your comment:</label>
+                <textarea class="form-control"
+                          id="commentText"
+                          cols="30"
+                          rows="10"
+                          v-model="comment">
+                </textarea>
+                <button class="btn btn-sm btn-primary" type="submit">Publish</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="row justify-content-center mt-3">
+
+        <div v-for="(comment, objKey) in comments" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Comment {{ objKey + 1 }}</h5>
+                <p class="card-text">{{ comment }}</p>
+                <button class="btn btn-sm btn-danger">remove</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

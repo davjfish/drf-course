@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class and Style Binding</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+        }
+        .square {
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div class="row justify-content-center mt-3">
+        <h1>Class and Style Binding</h1>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div v-bind:class="{ circle:is_circle, square:!is_circle }"
+             v-bind:style="styleObject"
+        ></div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <button @click="changeShape" class="btn btn-secondary"> Switch Shapes </button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
